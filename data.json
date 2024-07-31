@@ -1,0 +1,120 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "category": "セキュリティ",
+      "name": "セキュリティ評価制度(ISMAP)",
+      "formal": "Information Security Management Program",
+      "description": "政府が求めるセキュリティ要求を満たしているクラウドサービスをあらかじめ評価、登録することによって、政府のクラウドサービス調達におけるセキュリティ水準の確保を図る制度。",
+      "img": "public/Img/ismap.jpg",
+      "source": "令和5年春期 午前問39",
+      "status": "自身の ATK +1"
+    },
+    {
+      "id": 2,
+      "category": "アルゴリズム",
+      "name": "線形探索法",
+      "formal": "Linear Search",
+      "description": "データ数がnの線形リストから先頭を探索する場合、最小探索回数は1回、最大探索回数はn回なので、平均探索回数は(n+1)/2。",
+      "img": "public/Img/linear.jpg",
+      "source": "令和5年春期 午前問6",
+      "status":  "自身の ATK +1"
+    },
+    {
+      "id": 3,
+      "category": "コンピュータ構成要素",
+      "name": "ライトスルー方式",
+      "formal": "Write-Through",
+      "description": "キャッシュメモリへデータを書き込む際に、主記憶（メインメモリ）にも書き込む方式。データの整合性が得られるが処理速度は遅い。",
+      "img": "public/Img/writeThrough.jpg",
+      "source": "令和5年春期 午前問10",
+      "status":  "自身の ATK +1"
+    },
+    {
+      "id": 4,
+      "category": "コンピュータ構成要素",
+      "name": "ウェアレベリング",
+      "formal": "Wear Leveling",
+      "description": "メモリ全体に対して書き込みと消去の負荷を均等に分散させる。特定のブロックやページに対して繰り返し書き込みが集中しないようにする。",
+      "img": "public/Img/wearLeveling.jpg",
+      "source": "令和5年春期 午前問11",
+      "status": "自身の ATK +1"
+    },
+    {
+      "id": 5,
+      "category": "セキュリティ",
+      "name": "TPM",
+      "formal": "Trusted Platform Module",
+      "description": "マザーボードに直付けされているセキュリティに関する各種機能を備えた半導体部品。データの暗号化・復号や鍵ペアの生成、ハッシュ値の計算、デジタル署名の生成・検証などの機能を有する。",
+      "img": "public/Img/tpm.jpg",
+      "source": "令和5年春期 午前問41",
+      "status":  "自身の ATK +1"
+    },
+    {
+      "id": 6,
+      "category": "セキュリティ",
+      "name": "デジタルフォレンジックス",
+      "formal": "Digital Forensics",
+      "description": "コンピュータやデジタルデバイスに関連する犯罪やセキュリティ侵害の調査と解析を行うプロセス。鑑識。",
+      "img": "public/Img/digitalForensics.jpg",
+      "source": "令和5年春期 午前問42",
+      "status": "自身の ATK +1"
+    },
+    {
+      "id": 7,
+      "category": "セキュリティ",
+      "name": "サブミッションポート",
+      "formal": "Submission Port",
+      "description": "メール送信専用のポート(587番)のこと。SMTP認証(SMTP AUTH)と併せて使うことで、スパムメール対策になる。",
+      "img": "public/Img/submissionPort.jpg",
+      "source": "令和5年春期 午前問44",
+      "status": "自身の ATK +1<br>相手の DEF -1"
+    },
+    {
+      "id": 8,
+      "category": "プロジェクトマネジメント",
+      "name": "プロジェクト憲章",
+      "formal": "Project Charter",
+      "description": "プロジェクトの目的、範囲、目標、主要なステークホルダー、役割と責任、そしてプロジェクトの成功を測るための基準などを定義した文書。枠組み。charter:権限",
+      "img": "public/Img/projectCharter.jpg",
+      "source": "令和5年春期 午前問51",
+      "status":  "自身の ATK +1"
+    }, {
+      "id": 9,
+      "category": "経営・組織論",
+      "name": "BCP",
+      "formal": "Business Continuity Plan",
+      "description": "事業の中断・阻害に対応し、事業を復旧し、再開し、あらかじめ定められたレベルに回復するように組織を導く手順を文書化したもの",
+      "img": "public/Img/projectCharter.jpg",
+      "source": "令和4年秋期 午前問61",
+      "status":  "自身の ATK +1"
+    },{
+      "id": 10,
+      "category": "経営・組織論",
+      "name": "BPO",
+      "formal": "Business Process Outsourcing",
+      "description": "企業が業務の一部を外部業者に委託し、コスト削減や業務効率化を図る手法",
+      "img": "public/Img/projectCharter.jpg",
+      "source": "令和4年秋期 午前問61",
+      "status":  "自身の ATK +1"
+    },{
+      "id": 11,
+      "category": "経営・組織論",
+      "name": "BPM",
+      "formal": "Business Process Management",
+      "description": "業務プロセスを分析・改善し、効率化と品質向上を図る管理手法。継続的なプロセス最適化を目指す。",
+      "img": "public/Img/projectCharter.jpg",
+      "source": "令和4年秋期 午前問61",
+      "status":  "自身の ATK +1"
+    },{
+      "id": 12,
+      "category": "経営・組織論",
+      "name": "BSC",
+      "formal": "Business Score Card",
+      "description": "財務、顧客、内部プロセス、学習と成長の4つの視点から企業の業績を評価し、戦略の実行と目標達成を支援する管理手法。",
+      "img": "public/Img/projectCharter.jpg",
+      "source": "令和4年秋期 午前問61",
+      "status":  "自身の ATK +1"
+    }
+  ]
+}
