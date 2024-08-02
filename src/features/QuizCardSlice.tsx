@@ -5,11 +5,13 @@ import { CardData } from '../components/types';
 interface QuizCardState {
   cards: CardData[];
   selectNo: number;
+  displayCard: boolean;
 }
 
 const initialState: QuizCardState = {
   cards: [],
   selectNo: 0,
+  displayCard: true,
 };
 
 const quizCardSlice = createSlice({
@@ -28,10 +30,13 @@ const quizCardSlice = createSlice({
     setSelectNo(state, action: PayloadAction<number>) {
       state.selectNo = action.payload;
     },
+    toggleDisplayCard(state) {
+      state.displayCard = !state.displayCard;
+    },
   },
 });
 
-export const { setCards, incrementSelectNo, decrementSelectNo, setSelectNo } =
+export const { setCards, incrementSelectNo, decrementSelectNo, setSelectNo , toggleDisplayCard} =
   quizCardSlice.actions;
 export default quizCardSlice.reducer;
 export type { QuizCardState };
