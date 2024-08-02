@@ -22,7 +22,7 @@ const SelfContainer = () => {
           </div>
         </div>
         <div className="w-[130px] h-[200px]  overflow-hidden">
-          <img src="public/Img/self.jpg" className="w-auto h-auto" alt="" />
+          <img src="/Img/self.jpg" className="w-auto h-auto" alt="" />
         </div>
       </div>
     </>

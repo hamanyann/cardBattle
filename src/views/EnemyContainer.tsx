@@ -11,7 +11,7 @@ const EnemyContainer = () => {
     <>
       <div className="flex  justify-between w-full">
         <div className="w-[130px] h-[200px]  overflow-hidden">
-          <img src="public/Img/enemy2.jpg" className="w-auto h-auto" alt="" />
+          <img src="/Img/enemy2.jpg" className="w-auto h-auto" alt="" />
         </div>
         <div
           style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}
