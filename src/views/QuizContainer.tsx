@@ -7,7 +7,6 @@ import CardSelect from './CardSelect';
 import SelfContainer from './SelfContainer';
 import EnemyContainer from './EnemyContainer';
 
-
 export default function SimpleContainer() {
   return (
     <React.Fragment>
@@ -29,7 +28,7 @@ export default function SimpleContainer() {
       </Container>
 
       <div className="flex justify-center items-center gap-4 p-4">
-        <CardSelect/>       
+        <CardSelect />
       </div>
     </React.Fragment>
   );

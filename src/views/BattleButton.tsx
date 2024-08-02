@@ -4,7 +4,6 @@ import {
   toggleBattle2Text,
 } from '../features/BattleTextSlice';
 
-import StatusAction from './StatusAction';
 
 const BattleButton = () => {
   const dispatch = useDispatch();
@@ -12,7 +11,6 @@ const BattleButton = () => {
   const handleButtonClick = () => {
     dispatch(toggleBattle2Text());
     dispatch(hiddenBattleButton());
-    <StatusAction />;
   };
 
   return (

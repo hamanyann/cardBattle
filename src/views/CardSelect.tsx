@@ -5,6 +5,7 @@ import CardSelectCardSelect from './CardSelectCardSelect';
 import BattleButton from './BattleButton';
 import CardSelectCardCorrect from './CardSelectCardCorrect';
 import ToggleButtonNotEmpty from './ToggleButton';
+import StatusAction from './StatusAction';
 
 function shuffleArray(array: number[]) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -23,6 +24,12 @@ const CardSelect = () => {
     (state: RootState) => state.battleText.battleButton
   );
 
+  const selectCard = useSelector(
+    (state: RootState) => state.quizCard.cards[0]?.name ||""
+  );
+  const correctCard = useSelector(
+    (state: RootState) => state.correct.card[0]?.name || ""
+  );
 
   return (
     <>
@@ -32,16 +39,18 @@ const CardSelect = () => {
       <CardSelectCard random={shuffledArray[3]} />
       {!display && isBattleButtonHidden ? (
         <>
-          <div className='absolute top-[200px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 '>
+          <div className="absolute top-[200px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
             <ToggleButtonNotEmpty />
           </div>
           <CardSelectCardSelect />
           <BattleButton />
           <CardSelectCardCorrect />
+          {selectCard === correctCard ? <StatusAction /> : ''}
         </>
       ) : (
         ''
       )}
+     
     </>
   );
 };

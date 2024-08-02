@@ -6,6 +6,7 @@ const EnemyContainer = () => {
   const hp = useSelector((state: RootState) => state.EnemyStatusChange.hp);
   const atk = useSelector((state: RootState) => state.EnemyStatusChange.atk);
   const def = useSelector((state: RootState) => state.EnemyStatusChange.def);
+
   return (
     <>
       <div className="flex  justify-between w-full">
@@ -18,9 +19,11 @@ const EnemyContainer = () => {
         >
           <div className="m-4">
             <div className="text-2xl font-noto-serif-jp">{name}</div>
-            <div className="text-2xl">HP {hp}</div>
-            <div className="text-2xl">ATK / {atk} bit</div>
-            <div className="text-2xl">DEF / {def} bit</div>
+            <div>
+              <div className="text-2xl">HP {hp}</div>
+              <div className="text-2xl">ATK / {atk} bit</div>
+              <div className="text-2xl">DEF / {def} bit</div>
+            </div>
           </div>
         </div>
       </div>

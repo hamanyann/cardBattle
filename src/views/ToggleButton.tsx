@@ -12,7 +12,7 @@ import { useSelector } from 'react-redux';
   const [alignment, setAlignment] = React.useState('left');
 
   const handleAlignment = (
-    event: React.MouseEvent<HTMLElement>,
+    _event: React.MouseEvent<HTMLElement>,
     newAlignment: string | null
   ) => {
     if (newAlignment !== null) {

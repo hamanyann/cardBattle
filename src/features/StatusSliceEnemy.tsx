@@ -14,8 +14,8 @@ const initialState: StatusEnemyState = {
     hp: 5,
     atk: 1,
     def: 0,
-    beforeHp: 0,
-    beforeAtk: 0,
+    beforeHp: 5,
+    beforeAtk: 1,
     beforeDef: 0,
 };
 
@@ -31,7 +31,7 @@ const statusEnemySlice = createSlice({
         enemyDamage(state, action: PayloadAction<number>) {
             const value = action.payload;
             state.beforeHp = state.hp;
-            state.hp = state.hp-value+state.def;
+            state.hp -= value;
         }
     },
 });

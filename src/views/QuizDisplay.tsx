@@ -4,6 +4,8 @@ import BattleText from './BattleText';
 import QuizText from './QuizText';
 import BattleText2 from './BattleTextCorrect';
 
+import ArrowButton from './ArrowButton';
+
 const QuizDisplay = () => {
   const battleTextToggle = useSelector(
     (state: RootState) => state.battleText.battleText
@@ -22,6 +24,8 @@ const QuizDisplay = () => {
         {battleTextToggle ? <BattleText /> : ''}
         {quizTextToggle ? <QuizText /> : ''}
         {quizTextToggle2 ? <BattleText2 /> : ''}
+        {quizTextToggle2 ? <ArrowButton text = "NEXT" /> : ''}
+    
       </div>
     </>
   );

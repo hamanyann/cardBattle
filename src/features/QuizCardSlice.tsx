@@ -6,12 +6,14 @@ interface QuizCardState {
   cards: CardData[];
   selectNo: number;
   displayCard: boolean;
+  newCard: CardData[];
 }
 
 const initialState: QuizCardState = {
   cards: [],
   selectNo: 0,
   displayCard: true,
+  newCard: [],
 };
 
 const quizCardSlice = createSlice({
@@ -19,6 +21,7 @@ const quizCardSlice = createSlice({
   initialState,
   reducers: {
     setCards(state, action: PayloadAction<CardData[]>) {
+      state.newCard = state.cards;
       state.cards = action.payload;
     },
     incrementSelectNo(state) {
@@ -33,10 +36,13 @@ const quizCardSlice = createSlice({
     toggleDisplayCard(state) {
       state.displayCard = !state.displayCard;
     },
+    setResetCards(state) {
+      state.cards = state.newCard;
+    },
   },
 });
 
-export const { setCards, incrementSelectNo, decrementSelectNo, setSelectNo , toggleDisplayCard} =
+export const { setCards, incrementSelectNo, decrementSelectNo, setSelectNo , toggleDisplayCard, setResetCards} =
   quizCardSlice.actions;
 export default quizCardSlice.reducer;
 export type { QuizCardState };
