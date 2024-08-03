@@ -5,10 +5,8 @@ import MainContainer from './views/MainContainer';
 function App() {
   return (
     <>
-      <MainContainer>
-        
-        <QuizContainer />
-        
+      <MainContainer>        
+        <QuizContainer />        
       </MainContainer>
  
     </>

@@ -3,12 +3,12 @@ import { CardData } from '../components/types';
 
 interface CorrectState {
   card: CardData[];
-  quizText: string;
+  
 }
 
 const initialState: CorrectState = {
   card: [],
-  quizText: '',
+ 
 };
 
 const correctSlice = createSlice({
@@ -17,13 +17,10 @@ const correctSlice = createSlice({
   reducers: {
     setCard(state, action: PayloadAction<CardData[]>) {
       state.card = action.payload;
-    },
-    setQuizText(state, action: PayloadAction<string>) {
-      state.quizText = action.payload;
-    },
+    },   
   },
 });
 
-export const { setCard, setQuizText } = correctSlice.actions;
+export const { setCard } = correctSlice.actions;
 export default correctSlice.reducer;
 export type { CorrectState };

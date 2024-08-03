@@ -11,7 +11,7 @@ interface StatusEnemyState {
 }
 const initialState: StatusEnemyState = {
     name:"バグマスター",
-    hp: 5,
+    hp: 10,
     atk: 1,
     def: 0,
     beforeHp: 5,

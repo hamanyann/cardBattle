@@ -2,9 +2,12 @@
 import React from 'react';
 import { MoveRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { toggleReset } from '@/features/BattleTextSlice';
-import { setResetCards, toggleDisplayCard } from '@/features/QuizCardSlice';
+import { toggleDisplayCard , setAddCards} from '@/features/QuizCardSlice';
+import { setCard } from '@/features/CorrectSlice';
+import { RootState } from '@/reducers/Store';
+
 
 interface ArrowButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -26,11 +29,16 @@ export default function ArrowButton({
   ...props
 }: ArrowButtonProps) {
 
+  const newCorrectRandom = useSelector(
+    (state: RootState) => state.quizCard.newCard[0]
+  );
+
 const dispatch = useDispatch();
   const handleButtonClick = () => {
     dispatch(toggleReset());
-    dispatch(toggleDisplayCard());
-    dispatch(setResetCards());
+    dispatch(toggleDisplayCard());   
+    dispatch(setAddCards())
+    dispatch(setCard([newCorrectRandom]));
   };
 
   return (

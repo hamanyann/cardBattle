@@ -68,7 +68,7 @@
       "description": "メール送信専用のポート(587番)のこと。SMTP認証(SMTP AUTH)と併せて使うことで、スパムメール対策になる。",
       "img": "/Img/submissionPort.jpg",
       "source": "令和5年春期 午前問44",
-      "status": "自身の ATK +1<br>相手の DEF -1"
+      "status": "自身の ATK +1"
     },
     {
       "id": 8,
@@ -99,7 +99,7 @@
       "status":  "自身の ATK +1"
     },{
       "id": 11,
-      "category": "経営・組織論",
+      "category": "セキュリティ",
       "name": "BPM",
       "formal": "Business Process Management",
       "description": "業務プロセスを分析・改善し、効率化と品質向上を図る管理手法。継続的なプロセス最適化を目指す。",
@@ -108,7 +108,7 @@
       "status":  "自身の ATK +1"
     },{
       "id": 12,
-      "category": "経営・組織論",
+      "category": "セキュリティ",
       "name": "BSC",
       "formal": "Business Score Card",
       "description": "財務、顧客、内部プロセス、学習と成長の4つの視点から企業の業績を評価し、戦略の実行と目標達成を支援する管理手法。",

@@ -31,6 +31,8 @@ const CardSelect = () => {
     (state: RootState) => state.correct.card[0]?.name || ""
   );
 
+  const result = useSelector((state: RootState) => state.battleText.resultToggle);
+
   return (
     <>
       <CardSelectCard random={shuffledArray[0]} />
@@ -50,7 +52,7 @@ const CardSelect = () => {
       ) : (
         ''
       )}
-     
+     {result ? <>a</> : ''}
     </>
   );
 };

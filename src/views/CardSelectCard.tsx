@@ -2,13 +2,17 @@ import {
   setCards,
   setSelectNo,
   toggleDisplayCard,
+  setRemainingCards,
+  setFullCards,
+  setReducedNewCards,
+  setCardsNext,
 } from '../features/QuizCardSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { CardData } from '../components/types';
 import { useEffect, useState } from 'react';
 import { RootState } from '../reducers/Store';
 import { GlareCard } from '../components/ui/glare-card';
-import { setCard, setQuizText } from '../features/CorrectSlice';
+import { setCard } from '../features/CorrectSlice';
 import { toggleBattleText } from '../features/BattleTextSlice';
 import PropTypes from 'prop-types';
 
@@ -42,9 +46,14 @@ const CardSelectCard: React.FC<CardSelectProps> = ({ random }) => {
           (card: CardData) => card.category == category
         );
         const randomCards = getRandomCards(filteredCards, 4);
+        const remainingCards = filteredCards.filter(
+          (card: CardData) =>
+            !randomCards.find(randomCard => randomCard.id === card.id)
+        );
         dispatch(setCards(randomCards));
-        dispatch(setQuizText(randomCards[0].description));
         dispatch(setCard([randomCards[0]]));
+        dispatch(setFullCards(filteredCards));
+        dispatch(setRemainingCards(remainingCards));
         setIsLoading(false);
       })
       .catch(() => {
@@ -58,7 +67,8 @@ const CardSelectCard: React.FC<CardSelectProps> = ({ random }) => {
     const card = cards.find(card => card.id === id);
     if (card) {
       dispatch(setSelectNo(selectedCard.id));
-      dispatch(setCards([card]));
+      dispatch(setCardsNext([card]));
+      dispatch(setReducedNewCards([card]));
       dispatch(toggleBattleText());
       dispatch(toggleDisplayCard());
     }
