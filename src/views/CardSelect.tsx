@@ -35,7 +35,7 @@ const CardSelect = () => {
     (state: RootState) => state.battleText.resultToggle
   );
 
-  const loading = useSelector((state: RootState) => state.battleText.loading);
+ 
 
   return (
     <>

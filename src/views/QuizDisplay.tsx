@@ -7,7 +7,7 @@ import BattleText2 from './BattleTextCorrect';
 import ArrowButton from './ArrowButton';
 import WinButton from './WinButton';
 import Button from '@mui/material/Button';
-import { dividerClasses } from '@mui/material';
+
 
 const QuizDisplay = () => {
   const battleTextToggle = useSelector(

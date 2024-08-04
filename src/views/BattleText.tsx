@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../reducers/Store';
 import GibberishText from '../components/ui/Gibberish-text';
 import { useSpring, animated } from 'react-spring';
-import { enemyResultHp } from '@/features/StatusSliceEnemy';
+
 
 const BattleText = () => {
   const selectedCard = useSelector(

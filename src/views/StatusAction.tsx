@@ -14,7 +14,7 @@ console.log(useSelector ((state: RootState) => state.correct.card[0].name));
 console.log(useSelector ((state: RootState) => state.correct.card[0].status));
 
   const name = useSelector((state: RootState) => state.statusChange.name);
-  const atk = useSelector((state: RootState) => state.statusChange.atk);
+ 
   const beforeAtk = useSelector(
     (state: RootState) => state.statusChange.beforeAtk
   );
@@ -22,7 +22,7 @@ console.log(useSelector ((state: RootState) => state.correct.card[0].status));
   const nameEnemy = useSelector(
     (state: RootState) => state.EnemyStatusChange.name
   );
-  const hpEnemy = useSelector((state: RootState) => state.EnemyStatusChange.hp);
+ 
   const beforeHpEnemy = useSelector(
     (state: RootState) => state.EnemyStatusChange.beforeHp
   );
