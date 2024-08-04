@@ -7,6 +7,7 @@ import BattleText2 from './BattleTextCorrect';
 import ArrowButton from './ArrowButton';
 import WinButton from './WinButton';
 import Button from '@mui/material/Button';
+import { dividerClasses } from '@mui/material';
 
 const QuizDisplay = () => {
   const battleTextToggle = useSelector(
@@ -19,6 +20,7 @@ const QuizDisplay = () => {
   const quizTextToggle2 = useSelector(
     (state: RootState) => state.battleText.battleText2
   );
+  const loading = useSelector((state: RootState) => state.battleText.loading);
   const enemyHp = useSelector((state: RootState) => state.EnemyStatusChange.hp);
 
   const selfHp = useSelector((state: RootState) => state.statusChange.hp);
@@ -42,7 +44,18 @@ const QuizDisplay = () => {
     <>
       <div className="bg-white rounded-md w-full h-[200px] p-6">
         {battleTextToggle ? <BattleText /> : ''}
-        {quizTextToggle ? <QuizText /> : ''}
+
+      
+
+        {!loading ? (
+          <div className="text-3xl text-red-600 text-center flex items-center justify-center h-full">
+            <div>READY</div>
+          </div>
+        ) : quizTextToggle ? (
+          <QuizText />
+        ) : (
+          ''
+        )}
 
         {quizTextToggle2 && (
           <>
@@ -57,7 +70,7 @@ const QuizDisplay = () => {
               </>
             )}
             <BattleText2 />
-            
+
             {enemyHp <= 0 && selfHp > 0 && (
               <div className="flex justify-center mt-[100px]">
                 <WinButton />
@@ -74,7 +87,6 @@ const QuizDisplay = () => {
                 </Button>
               </div>
             )}
-
           </>
         )}
 
@@ -88,14 +100,14 @@ const QuizDisplay = () => {
           <div className="flex justify-center mt-[100px]">
             <div className="text-3xl ">DRAW</div>
             <div className="flex justify-center mt-[50px]">
-                <Button
-                  sx={{ fontSize: '46px', marginTop: '20px' }}
-                  variant="contained"
-                  onClick={handleButtonClick}
-                >
-                  再挑戦
-                </Button>
-              </div>
+              <Button
+                sx={{ fontSize: '46px', marginTop: '20px' }}
+                variant="contained"
+                onClick={handleButtonClick}
+              >
+                再挑戦
+              </Button>
+            </div>
           </div>
         ) : (
           ''

@@ -2,17 +2,21 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../reducers/Store';
 import GibberishText from '../components/ui/Gibberish-text';
 import { useSpring, animated } from 'react-spring';
+import { enemyResultHp } from '@/features/StatusSliceEnemy';
 
 const BattleText = () => {
   const selectedCard = useSelector(
     (state: RootState) => state.quizCard.cards[0].name
   );
   const correct = useSelector((state: RootState) => state.correct.card[0].name);
-  const name = useSelector((state: RootState) => state.statusChange.name);
-  const atk = useSelector((state: RootState) => state.statusChange.atk);
-  const beforeAtk = useSelector(
-    (state: RootState) => state.statusChange.beforeAtk
+
+  const resultAtk = useSelector(
+    (state: RootState) => state.statusChange.resultAtk
   );
+  const enemyResultHp = useSelector(
+    (state: RootState) => state.EnemyStatusChange.resultHp
+  );
+
   const fadeInProps = useSpring({
     opacity: 1,
     from: { opacity: 0 },
@@ -30,7 +34,8 @@ const BattleText = () => {
               />
             </div>
             <animated.div style={fadeInProps} className="text-2xl mt-2">
-              {name}：ATK / {beforeAtk} → {atk}
+              {resultAtk}
+              {enemyResultHp}
             </animated.div>
           </div>
         ) : (

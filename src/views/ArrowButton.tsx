@@ -7,6 +7,8 @@ import { toggleReset } from '@/features/BattleTextSlice';
 import { toggleDisplayCard , setAddCards} from '@/features/QuizCardSlice';
 import { setCard } from '@/features/CorrectSlice';
 import { RootState } from '@/reducers/Store';
+import { enemyResultHp , enemyBeforeHp} from '@/features/StatusSliceEnemy';
+import { resultAtk , beforeHp} from '@/features/StatusSlice';
 
 
 interface ArrowButtonProps
@@ -39,6 +41,10 @@ const dispatch = useDispatch();
     dispatch(toggleDisplayCard());   
     dispatch(setAddCards())
     dispatch(setCard([newCorrectRandom]));
+    dispatch(enemyResultHp(""))
+    dispatch(resultAtk(""))
+    dispatch(beforeHp())
+    dispatch(enemyBeforeHp())
   };
 
   return (

@@ -58,6 +58,8 @@ const NewGetCard: React.FC<CardSelectProps> = ({ random }) => {
       });
   }, []);
 
+  
+
   const selectedCard = cards[random];
 
   const handleButtonClick = (id: number) => {

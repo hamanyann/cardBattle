@@ -8,15 +8,17 @@ interface StatusEnemyState {
     beforeHp: number,
     beforeAtk: number,
     beforeDef: number,
+    resultHp: string,
 }
 const initialState: StatusEnemyState = {
     name:"バグマスター",
     hp: 50,
     atk: 5,
     def: 0,
-    beforeHp: 5,
-    beforeAtk: 1,
+    beforeHp: 50,
+    beforeAtk: 5,
     beforeDef: 0,
+    resultHp: '',
 };
 
 const statusEnemySlice = createSlice({
@@ -28,13 +30,21 @@ const statusEnemySlice = createSlice({
             state.beforeAtk = state.atk;
             state.atk += value;
         },
+       
         enemyDamage(state, action: PayloadAction<number>) {
             const value = action.payload;
-            state.beforeHp = state.hp;
+           
             state.hp -= value;
-        }
+        },
+        enemyResultHp(state, action: PayloadAction<string>) {
+            state.resultHp = action.payload;
+        },
+        enemyBeforeHp(state) {
+            state.beforeHp = state.hp;
+        },
+        
     },
 });
-export const { enemyAtkUp , enemyDamage} = statusEnemySlice.actions;
+export const { enemyAtkUp , enemyDamage , enemyResultHp , enemyBeforeHp} = statusEnemySlice.actions;
 export default statusEnemySlice.reducer
 export type { StatusEnemyState }

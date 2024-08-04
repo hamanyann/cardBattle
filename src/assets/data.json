@@ -38,7 +38,7 @@
       "description": "メモリ全体に対して書き込みと消去の負荷を均等に分散させる。特定のブロックやページに対して繰り返し書き込みが集中しないようにする。",
       "img": "/Img/wearLeveling.jpg",
       "source": "令和5年春期 午前問11",
-      "status": "自身の ATK +1"
+      "status": "相手の HP -3"
     },
     {
       "id": 5,
@@ -48,7 +48,7 @@
       "description": "マザーボードに直付けされているセキュリティに関する各種機能を備えた半導体部品。データの暗号化・復号や鍵ペアの生成、ハッシュ値の計算、デジタル署名の生成・検証などの機能を有する。",
       "img": "/Img/tpm.jpg",
       "source": "令和5年春期 午前問41",
-      "status":  "自身の ATK +1"
+      "status":  "自身の ATK +2"
     },
     {
       "id": 6,
@@ -68,7 +68,7 @@
       "description": "メール送信専用のポート(587番)のこと。SMTP認証(SMTP AUTH)と併せて使うことで、スパムメール対策になる。",
       "img": "/Img/submissionPort.jpg",
       "source": "令和5年春期 午前問44",
-      "status": "自身の ATK +1"
+      "status": "相手の HP -2"
     },
     {
       "id": 8,
@@ -87,7 +87,7 @@
       "description": "事業の中断・阻害に対応し、事業を復旧し、再開し、あらかじめ定められたレベルに回復するように組織を導く手順を文書化したもの",
       "img": "/Img/businessContinuityPlan.jpg",
       "source": "令和4年秋期 午前問61",
-      "status":  "自身の ATK +1"
+      "status":  "相手の HP -2"
     },{
       "id": 10,
       "category": "経営・組織論",
@@ -105,7 +105,7 @@
       "description": "業務プロセスを分析・改善し、効率化と品質向上を図る管理手法。継続的なプロセス最適化を目指す。",
       "img": "/Img/businessProcessManagement.jpg",
       "source": "令和4年秋期 午前問61",
-      "status":  "自身の ATK +1"
+      "status":  "相手の HP -2"
     },{
       "id": 12,
       "category": "経営・組織論",
@@ -114,7 +114,7 @@
       "description": "財務、顧客、内部プロセス、学習と成長の4つの視点から企業の業績を評価し、戦略の実行と目標達成を支援する管理手法。",
       "img": "/Img/businessScoreCard.jpg",
       "source": "令和4年秋期 午前問61",
-      "status":  "自身の ATK +1"
+      "status":  "相手の HP -2"
     }
   ]
 }

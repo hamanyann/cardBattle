@@ -25,13 +25,17 @@ const CardSelect = () => {
   );
 
   const selectCard = useSelector(
-    (state: RootState) => state.quizCard.cards[0]?.name ||""
+    (state: RootState) => state.quizCard.cards[0]?.name || ''
   );
   const correctCard = useSelector(
-    (state: RootState) => state.correct.card[0]?.name || ""
+    (state: RootState) => state.correct.card[0]?.name || ''
   );
 
-  const result = useSelector((state: RootState) => state.battleText.resultToggle);
+  const result = useSelector(
+    (state: RootState) => state.battleText.resultToggle
+  );
+
+  const loading = useSelector((state: RootState) => state.battleText.loading);
 
   return (
     <>
@@ -39,6 +43,7 @@ const CardSelect = () => {
       <CardSelectCard random={shuffledArray[1]} />
       <CardSelectCard random={shuffledArray[2]} />
       <CardSelectCard random={shuffledArray[3]} />
+
       {!display && isBattleButtonHidden ? (
         <>
           <div className="absolute top-[200px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
@@ -52,7 +57,16 @@ const CardSelect = () => {
       ) : (
         ''
       )}
-     {result ? <button className='bg-blue-500 text-4xl p-5 rounded-lg' onClick={() => window.location.reload()}>再挑戦</button> : ''}
+      {result ? (
+        <button
+          className="bg-blue-500 text-4xl p-5 rounded-lg"
+          onClick={() => window.location.reload()}
+        >
+          再挑戦
+        </button>
+      ) : (
+        ''
+      )}
     </>
   );
 };
