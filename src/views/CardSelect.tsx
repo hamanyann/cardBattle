@@ -52,7 +52,7 @@ const CardSelect = () => {
       ) : (
         ''
       )}
-     {result ? <>a</> : ''}
+     {result ? <button className='bg-blue-500 text-4xl p-5 rounded-lg' onClick={() => window.location.reload()}>再挑戦</button> : ''}
     </>
   );
 };

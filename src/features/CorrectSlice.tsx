@@ -11,6 +11,8 @@ const initialState: CorrectState = {
  
 };
 
+
+
 const correctSlice = createSlice({
   name: 'quizText',
   initialState,

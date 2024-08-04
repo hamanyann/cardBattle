@@ -9,6 +9,7 @@ const battleTextSlice = createSlice({
     quizToggle: false,
     battleButton: true,
     resultToggle: false,
+    title: true,
   },
   reducers: {
     toggleBattleText(state) {
@@ -44,6 +45,9 @@ const battleTextSlice = createSlice({
       state.battleButton = false;
       state.resultToggle = true;
     },
+    toggleTitle(state) {
+      state.title = false;
+    },
   },
 });
 
@@ -53,6 +57,7 @@ export const {
   toggleQuizExplanation,
   hiddenBattleButton,
   toggleReset,
-  toggleResult
+  toggleResult,
+  toggleTitle,
 } = battleTextSlice.actions;
 export default battleTextSlice.reducer;

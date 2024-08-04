@@ -75,7 +75,7 @@
       "category": "プロジェクトマネジメント",
       "name": "プロジェクト憲章",
       "formal": "Project Charter",
-      "description": "プロジェクトの目的、範囲、目標、主要なステークホルダー、役割と責任、そしてプロジェクトの成功を測るための基準などを定義した文書。枠組み。charter:権限",
+      "description": "プロジェクトの目的、範囲、目標、主要なステークホルダー、役割と責任、そしてプロジェクトの成功を測るための基準などを定義した文書。枠組み。権限。",
       "img": "/Img/projectCharter.jpg",
       "source": "令和5年春期 午前問51",
       "status":  "自身の ATK +1"
@@ -85,7 +85,7 @@
       "name": "BCP",
       "formal": "Business Continuity Plan",
       "description": "事業の中断・阻害に対応し、事業を復旧し、再開し、あらかじめ定められたレベルに回復するように組織を導く手順を文書化したもの",
-      "img": "/Img/projectCharter.jpg",
+      "img": "/Img/businessContinuityPlan.jpg",
       "source": "令和4年秋期 午前問61",
       "status":  "自身の ATK +1"
     },{
@@ -94,25 +94,25 @@
       "name": "BPO",
       "formal": "Business Process Outsourcing",
       "description": "企業が業務の一部を外部業者に委託し、コスト削減や業務効率化を図る手法",
-      "img": "/Img/projectCharter.jpg",
+      "img": "/Img/businessProcessOutsourcing.jpg",
       "source": "令和4年秋期 午前問61",
       "status":  "自身の ATK +1"
     },{
       "id": 11,
-      "category": "セキュリティ",
+      "category": "経営・組織論",
       "name": "BPM",
       "formal": "Business Process Management",
       "description": "業務プロセスを分析・改善し、効率化と品質向上を図る管理手法。継続的なプロセス最適化を目指す。",
-      "img": "/Img/projectCharter.jpg",
+      "img": "/Img/businessProcessManagement.jpg",
       "source": "令和4年秋期 午前問61",
       "status":  "自身の ATK +1"
     },{
       "id": 12,
-      "category": "セキュリティ",
+      "category": "経営・組織論",
       "name": "BSC",
       "formal": "Business Score Card",
       "description": "財務、顧客、内部プロセス、学習と成長の4つの視点から企業の業績を評価し、戦略の実行と目標達成を支援する管理手法。",
-      "img": "/Img/projectCharter.jpg",
+      "img": "/Img/businessScoreCard.jpg",
       "source": "令和4年秋期 午前問61",
       "status":  "自身の ATK +1"
     }

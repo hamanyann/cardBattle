@@ -11,7 +11,7 @@ interface StatusState {
 }
 const initialState: StatusState = {
   name: '自分',
-  hp: 5,
+  hp: 60,
   atk: 1,
   def: 0,
   beforeHp: 5,

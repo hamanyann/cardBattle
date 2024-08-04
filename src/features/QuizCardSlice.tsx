@@ -19,12 +19,17 @@ const initialState: QuizCardState = {
   fullCards: [],
 };
 
+function getRandomCards(cards: CardData[], count: number): CardData[] {
+  const shuffled = [...cards].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+}
+
 const quizCardSlice = createSlice({
   name: 'quizCard',
   initialState,
   reducers: {
     setCards(state, action: PayloadAction<CardData[]>) {      
-      state.cards = action.payload;
+      state.cards = getRandomCards(action.payload, 4);
       state.newCard = state.cards;
     },
     setCardsNext(state, action: PayloadAction<CardData[]>) {
@@ -57,8 +62,9 @@ const quizCardSlice = createSlice({
         card => card.id !== randomRemainingCards[0].id
       );
       state.newCard = [...state.newCard, ...randomRemainingCards];
-      state.cards = state.newCard;
+      state.cards = getRandomCards(state.newCard, 4);
     },
+    
   },
 });
 

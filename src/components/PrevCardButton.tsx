@@ -1,27 +1,27 @@
-import { useDispatch,  } from 'react-redux';
-import { decrementSelectNo } from '../features/QuizCardSlice';
+// import { useDispatch,  } from 'react-redux';
+// import { decrementSelectNo } from '../features/QuizCardSlice';
 
 
-const NextCardButton = () => {
-  const dispatch = useDispatch();
+// const NextCardButton = () => {
+//   const dispatch = useDispatch();
 
   
 
-  const handleNextCard = () => {
-    dispatch(decrementSelectNo());
-  };
+//   const handleNextCard = () => {
+//     dispatch(decrementSelectNo());
+//   };
 
-  return (
-    <>
+//   return (
+//     <>
     
-      <button
-        className="text-4xl"
-        onClick={handleNextCard}
-      >
-        ＜
-      </button>
-    </>
-  );
-};
+//       <button
+//         className="text-4xl"
+//         onClick={handleNextCard}
+//       >
+//         ＜
+//       </button>
+//     </>
+//   );
+// };
 
-export default NextCardButton;
+// export default NextCardButton;

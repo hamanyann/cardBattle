@@ -1,6 +1,11 @@
 import { toggleResult } from "@/features/BattleTextSlice";
 import { useDispatch } from "react-redux";
 
+import { useSelector } from "react-redux";
+import { RootState } from "../reducers/Store";
+import NewGetCard from "./NewGetCard";
+
+
 
 const WinButton = () => {
     const dispatch = useDispatch();
@@ -8,6 +13,9 @@ const WinButton = () => {
    dispatch(toggleResult());
   
   };
+  const resultToggle = useSelector(
+    (state: RootState) => state.battleText.resultToggle
+  );
 
   return (
     <>
@@ -17,6 +25,7 @@ const WinButton = () => {
           不具合修正完了
         </div>
       </button>
+      {resultToggle ? <NewGetCard random = {0} /> : ''}
     </>
   );
 };

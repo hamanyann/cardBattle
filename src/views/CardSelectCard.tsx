@@ -30,9 +30,6 @@ function getRandomCards(cards: CardData[], count: number): CardData[] {
 const CardSelectCard: React.FC<CardSelectProps> = ({ random }) => {
   const dispatch = useDispatch();
   const cards = useSelector((state: RootState) => state.quizCard.cards);
-  const category = useSelector(
-    (state: RootState) => state.quizCategory.category
-  );
   const [isLoading, setIsLoading] = useState(true);
   const displayCard = useSelector(
     (state: RootState) => state.quizCard.displayCard
@@ -43,7 +40,7 @@ const CardSelectCard: React.FC<CardSelectProps> = ({ random }) => {
       .then(res => res.json())
       .then(data => {
         const filteredCards = data.filter(
-          (card: CardData) => card.category == category
+          (card: CardData) => card.id >= 1 && card.id <= 12
         );
         const randomCards = getRandomCards(filteredCards, 4);
         const remainingCards = filteredCards.filter(
@@ -59,13 +56,16 @@ const CardSelectCard: React.FC<CardSelectProps> = ({ random }) => {
       .catch(() => {
         setIsLoading(false);
       });
-  }, [category]);
+  }, []);
 
   const selectedCard = cards[random];
 
   const handleButtonClick = (id: number) => {
     const card = cards.find(card => card.id === id);
+    
+
     if (card) {
+      dispatch(setCards(cards));
       dispatch(setSelectNo(selectedCard.id));
       dispatch(setCardsNext([card]));
       dispatch(setReducedNewCards([card]));
