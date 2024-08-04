@@ -16,13 +16,14 @@ const BattleAction = () => {
   const enemyDef = useSelector(
     (state: RootState) => state.EnemyStatusChange.def
   );
-  
+
 
   useEffect(() => {
     dispatch(damage(enemyAtk - def));
     dispatch(enemyDamage(atk - enemyDef));
   }, [enemyAtk, dispatch]);
 
+  
   return null;
 };
 export default BattleAction;
