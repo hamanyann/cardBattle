@@ -15,7 +15,6 @@ import { GlareCard } from '../components/ui/glare-card';
 import { setCard } from '../features/CorrectSlice';
 import { toggleBattleText } from '../features/BattleTextSlice';
 import PropTypes from 'prop-types';
-
 import data from '../assets/data.json';
 
 interface CardSelectProps {
@@ -27,12 +26,27 @@ function getRandomCards(cards: CardData[], count: number): CardData[] {
   return shuffled.slice(0, count);
 }
 
+const preloadImages = (cards: CardData[]): Promise<void[]> => {
+  const imagePromises = cards.map(card => {
+    return new Promise<void>((resolve, reject) => {
+      const img = new Image();
+      img.src = card.img;
+      img.onload = () => resolve();
+      img.onerror = () => reject(new Error(`Failed to load image: ${card.img}`));
+    });
+  });
+  return Promise.all(imagePromises);
+};
+
 const CardSelectCard: React.FC<CardSelectProps> = ({ random }) => {
   const dispatch = useDispatch();
   const cards = useSelector((state: RootState) => state.quizCard.cards);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isImagesLoaded, setIsImagesLoaded] = useState(false);
   const displayCard = useSelector(
     (state: RootState) => state.quizCard.displayCard
+  );
+  const fullCards = useSelector(
+    (state: RootState) => state.quizCard.fullCards
   );
 
   useEffect(() => {
@@ -48,8 +62,17 @@ const CardSelectCard: React.FC<CardSelectProps> = ({ random }) => {
     dispatch(setCard([randomCards[0]]));
     dispatch(setFullCards(filteredCards));
     dispatch(setRemainingCards(remainingCards));
-    setIsLoading(false);
-  }, [dispatch]);
+    
+
+    preloadImages(fullCards)
+    .then(() => {
+      setIsImagesLoaded(true);     
+    })
+    .catch(() => {
+      setIsImagesLoaded(true);
+    });
+
+  }, []);
 
   const selectedCard = cards[random];
 
@@ -68,7 +91,7 @@ const CardSelectCard: React.FC<CardSelectProps> = ({ random }) => {
 
   return (
     <>
-      {isLoading ? (
+      {isImagesLoaded ? (
         <div className="w-[250px] h-[400px] flex justify-center items-center">
           <img
             alt="Loading..."
