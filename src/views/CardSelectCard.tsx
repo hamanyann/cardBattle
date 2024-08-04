@@ -16,7 +16,7 @@ import { setCard } from '../features/CorrectSlice';
 import { toggleBattleText } from '../features/BattleTextSlice';
 import PropTypes from 'prop-types';
 
-const url = 'http://localhost:3000/data/';
+import data from '../assets/data.json';
 
 interface CardSelectProps {
   random: number;
@@ -36,33 +36,25 @@ const CardSelectCard: React.FC<CardSelectProps> = ({ random }) => {
   );
 
   useEffect(() => {
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        const filteredCards = data.filter(
-          (card: CardData) => card.id >= 1 && card.id <= 12
-        );
-        const randomCards = getRandomCards(filteredCards, 4);
-        const remainingCards = filteredCards.filter(
-          (card: CardData) =>
-            !randomCards.find(randomCard => randomCard.id === card.id)
-        );
-        dispatch(setCards(randomCards));
-        dispatch(setCard([randomCards[0]]));
-        dispatch(setFullCards(filteredCards));
-        dispatch(setRemainingCards(remainingCards));
-        setIsLoading(false);
-      })
-      .catch(() => {
-        setIsLoading(false);
-      });
-  }, []);
+    const filteredCards = data.data.filter(
+      (card: CardData) => card.id >= 1 && card.id <= 12
+    );
+    const randomCards = getRandomCards(filteredCards, 4);
+    const remainingCards = filteredCards.filter(
+      (card: CardData) =>
+        !randomCards.find(randomCard => randomCard.id === card.id)
+    );
+    dispatch(setCards(randomCards));
+    dispatch(setCard([randomCards[0]]));
+    dispatch(setFullCards(filteredCards));
+    dispatch(setRemainingCards(remainingCards));
+    setIsLoading(false);
+  }, [dispatch]);
 
   const selectedCard = cards[random];
 
   const handleButtonClick = (id: number) => {
     const card = cards.find(card => card.id === id);
-    
 
     if (card) {
       dispatch(setCards(cards));
