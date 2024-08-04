@@ -45,9 +45,9 @@ const CardSelectCard: React.FC<CardSelectProps> = ({ random }) => {
   const displayCard = useSelector(
     (state: RootState) => state.quizCard.displayCard
   );
-  const fullCards = useSelector(
-    (state: RootState) => state.quizCard.fullCards
-  );
+  // const fullCards = useSelector(
+  //   (state: RootState) => state.quizCard.fullCards
+  // );
 
   useEffect(() => {
     const filteredCards = data.data.filter(
@@ -64,7 +64,7 @@ const CardSelectCard: React.FC<CardSelectProps> = ({ random }) => {
     dispatch(setRemainingCards(remainingCards));
     
 
-    preloadImages(fullCards)
+    preloadImages(randomCards)
     .then(() => {
       setIsImagesLoaded(true);     
     })
@@ -91,7 +91,7 @@ const CardSelectCard: React.FC<CardSelectProps> = ({ random }) => {
 
   return (
     <>
-      {isImagesLoaded ? (
+      {!isImagesLoaded ? (
         <div className="w-[250px] h-[400px] flex justify-center items-center">
           <img
             alt="Loading..."
