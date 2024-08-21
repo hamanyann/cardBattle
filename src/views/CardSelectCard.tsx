@@ -98,7 +98,7 @@ const CardSelectCard: React.FC<CardSelectProps> = ({ random }) => {
           <GlareCard className="   ">
             <div
               style={{
-                backgroundImage: `url(public/Img/back1.jpg`,
+                backgroundImage: `url(/Img/back1.jpg)`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundColor: 'rgba(255, 255, 255, 0.5)',
